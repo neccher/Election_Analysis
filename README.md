@@ -18,7 +18,7 @@ We were tasked with auditting the results of an election in the US Congressional
     The total number of votes cast were 369,711
     
 - Provide a breakdown of the number of votes and the percentage of total votes for each county in the precinct.
-   * To determine the number and percentage of votes for each county, we had to include an `if statement` that would increment the the total votes tally for each county in the  `county_votes` list by one for each row.  This was accomplished by adding the following `if statement` inside our `for loop`:
+   * To determine the number and percentage of votes for each county, we had to include an `if statement` that would first compile all intances of a unique county name into our `county_options` list and then increment the the total votes tally for each county in the  `county_votes` dictionary by one for each row.  This was accomplished by adding the following `if statement` inside our `for loop`:
    ~~~
    # 4a: Write an if statement that checks that the
         # county does not match any existing county in the county list.
@@ -34,4 +34,24 @@ We were tasked with auditting the results of an election in the US Congressional
         county_votes[county_name] += 1
    ~~~
    Once we had the number of votes for each county, we calculated the share of the total vote by each county:  `cvotes_percentage = float(cvotes) / float(total_votes) * 100`.
-   The percentage of votes were as follows: Jefferson: 10.5% (38,855); Denver: 82.8% (306,055); Arapahoe: 6.7% (24,801).
+   The percentage (and number) of votes by county were as follows: Jefferson: 10.5% (38,855); Denver: 82.8% (306,055); Arapahoe: 6.7% (24,801).
+
+- Which county had the largest number of votes?
+   * Denver had the largest number of votes.
+
+- Provide a breakdown of the number of votes and the percentage of the total votes each candidate received.
+   * To calulate the number of votes and percentage of total votes for each candidate, the process was quite similar to the one above.  We first had to use an `if statement` within a `for loop` to get the unique instances of a candidate's name and then add a count of each row for a particular candidate.  The following block of code accomplished this:
+~~~
+# If the candidate does not match any existing candidate add it to
+        # the candidate list
+        if candidate_name not in candidate_options:
+
+            # Add the candidate name to the candidate list.
+            candidate_options.append(candidate_name)
+
+            # And begin tracking that candidate's voter count.
+            candidate_votes[candidate_name] = 0
+
+        # Add a vote to that candidate's count
+        candidate_votes[candidate_name] += 1
+~~~
