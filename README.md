@@ -59,3 +59,7 @@ We were tasked with auditting the results of an election in the US Congressional
 
 - Which candidate won the election, what was their vote count, and what was their percentage of the total votes?
    * The winner was Diana DeGette.  Her vote count was 272,892 and her percentage of the vote was 73.8%.
+
+## Election Audit Summary
+
+As long as the CSV files that hold the data for future elections retains the same format, each row is a single vote, the second column (index 1) is the county, and the third column (index 2) is the candidate, then this script will be able to perform the same analysis.  The user will only need to modify the `file_to_load` variable to represent the file with the election data and add a repository within their working directory to hold an election analysis text file.
