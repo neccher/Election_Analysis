@@ -41,17 +41,21 @@ We were tasked with auditting the results of an election in the US Congressional
 
 - Provide a breakdown of the number of votes and the percentage of the total votes each candidate received.
    * To calulate the number of votes and percentage of total votes for each candidate, the process was quite similar to the one above.  We first had to use an `if statement` within a `for loop` to get the unique instances of a candidate's name and then add a count of each row for a particular candidate.  The following block of code accomplished this:
-~~~
-# If the candidate does not match any existing candidate add it to
-        # the candidate list
-        if candidate_name not in candidate_options:
+   ~~~
+   # If the candidate does not match any existing candidate add it to
+           # the candidate list
+           if candidate_name not in candidate_options:
 
-            # Add the candidate name to the candidate list.
-            candidate_options.append(candidate_name)
+               # Add the candidate name to the candidate list.
+               candidate_options.append(candidate_name)
 
-            # And begin tracking that candidate's voter count.
-            candidate_votes[candidate_name] = 0
+               # And begin tracking that candidate's voter count.
+               candidate_votes[candidate_name] = 0
 
-        # Add a vote to that candidate's count
-        candidate_votes[candidate_name] += 1
-~~~
+           # Add a vote to that candidate's count
+           candidate_votes[candidate_name] += 1
+   ~~~
+   We could then calulate the percentage of the total vote each candidate had with the following: `vote_percentage = float(votes) / float(total_votes) * 100`.  These were the results: Charles Casper Stockham: 23.0% (85,213); Diana DeGette: 73.8% (272,892); Raymon Anthony Doane: 3.1% (11,606).
+
+- Which candidate won the election, what was their vote count, and what was their percentage of the total votes?
+   * The winner was Diana DeGette.  Her vote count was 272,892 and her percentage of the vote was 73.8%.
