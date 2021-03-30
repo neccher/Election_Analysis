@@ -7,7 +7,7 @@ We were tasked with auditing the results of an election in the US Congressional 
 ## Election Audit Results
 
 - How many votes were cast in this congressional election?
-    * The election data was given to us in a CSV file where each row was a record of a vote.  To count the total number of votes cast, we created a `for loop` that added incremented a variable set to zero by one for each row in the file.  The code block looked like this:
+    * The election data was given to us in a CSV file where each row was a record of a vote.  To count the total number of votes cast, we created a `for loop` that incremented a variable set to zero by one for each row in the file.  The code block looked like this:
     ~~~
     # For each row in the CSV file.
     for row in reader:
@@ -62,4 +62,4 @@ We were tasked with auditing the results of an election in the US Congressional 
 
 ## Election Audit Summary
 
-As long as the CSV files that hold the data for future elections retains the same format, each row is a single vote, the second column (index 1) is the county, and the third column (index 2) is the candidate, then this script will be able to perform the same analysis.  The user will only need to modify the `file_to_load` variable to represent the file with the election data and add a repository within their working directory to hold an election analysis text file.
+As long as the CSV files that hold the data for future elections retains the same format, each row is a single vote, the second column (index 1) is the county, and the third column (index 2) is the candidate, then this script will be able to perform the same analysis in future elections.  The user will only need to modify the `file_to_load` variable to represent the file with the election data and add a repository within their working directory to hold an election analysis text file.
